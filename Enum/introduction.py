@@ -42,6 +42,6 @@ print(Value.C)
 """
 -> When to use Enum:
     * When values are fixed and known ahead of time (days of week, user roles, HTTP methods, states in a workflow, etc.).
-    * When you want meaningful names instead of raw numbers or strings.
-    * When you want type safety and to prevent invalid values.
+    * When we want meaningful names instead of raw numbers or strings.
+    * When we want type safety and to prevent invalid values.
 """
