@@ -1,0 +1,110 @@
+Q : What is File Mode?
+-> File mode is a parameter of the open() function that defines:
+ - What operation is allowed (read/write/append)
+ - How the file behaves (overwrite/preserve/create)
+ - What type of data is handled (text or binary)
+
+So, File mode specifies the purpose and behavior of a file when it is opened.
+
+File mode is used inside the open() function like : open(file_name, mode)
+Example : f = open("code.txt", "r")
+
+
+# Type of File Mode :
+1. "r" — Read Mode
+ - This mode opens a file for reading only
+ - The file must exist in the given location, otherwise raises FileNotFoundError
+ - Cursor starts at the beginning of the file (position 0)
+ - Writing is not allowed
+
+-> Syntax : f = open("code.txt", "r")
+
+2. "w" — Write Mode
+ - This mode opens a file for writing only
+ - If the file exists, all previous content is deleted
+ - If the file does not exist, a new file is created
+ - Cursor starts at the beginning of the file (position 0)
+
+-> Syntax : f = open("code.txt", "w")
+
+3. "a" — Append Mode
+ - This mode opens a file for writing at the end of the file
+ - Existing content is preserved
+ - If the file does not exist, a new file is created
+ - Cursor starts at the end of the file
+
+-> Syntax : f = open("code.txt", "a")
+
+4. "x" — Exclusive Creation Mode
+ - This mode opens a file for creation only
+ - If the file already exists, raises FileExistsError
+ - If the file does not exist, a new file is created
+
+-> Syntax : f = open("code.txt", "x")
+
+5. "r+" — Read + Write Mode
+ - This mode opens a file for both reading and writing
+ - The file must exist, otherwise raises FileNotFoundError
+ - Cursor starts at the beginning of the file (position 0)
+ - Writing does not delete existing content, it overwrites from the current cursor position
+
+-> Syntax : f = open("code.txt", "r+")
+
+6. "w+" — Read + Write (Overwrite) Mode
+ - This mode opens a file for both reading and writing
+ - If the file exists, all previous content is deleted
+ - If the file does not exist, a new file is created
+ - Cursor starts at the beginning of the file (position 0)
+
+-> Syntax : f = open("code.txt", "w+")
+
+7. "a+" — Read + Append Mode
+ - This mode opens a file for reading and writing
+ - Writing always happens at the end of the file
+ - Existing content is preserved
+ - If the file does not exist, a new file is created
+ - To read from the beginning, cursor needs to be moved using f.seek(0)
+
+-> Syntax : f = open("code.txt", "a+")
+
+8. "rb" — Read Binary Mode
+ - This mode opens a file for reading in binary format
+ - Used for non-text files (images, videos, PDFs)
+ - File must exist, otherwise raises FileNotFoundError
+ - Cursor starts at the beginning of the file (position 0)
+ - No writing allowed
+
+-> Syntax : f = open("image.png", "rb")
+
+9. "wb" — Write Binary Mode
+ - This mode opens a file for writing in binary format
+ - If the file exists, all previous content is deleted
+ - If the file does not exist, a new file is created
+ - Cursor starts at the beginning of the file (position 0)
+
+-> Syntax : f = open("image.png", "wb")
+
+10. "rb+" — Read + Write Binary Mode
+ - This mode opens a file for both reading and writing in binary format
+ - The file must exist, otherwise raises FileNotFoundError
+ - Cursor starts at the beginning of the file (position 0)
+ - Writing overwrites content from the current cursor position
+
+-> Syntax : f = open("image.png", "rb+")
+
+11. "wb+" — Write + Read Binary Mode
+ - This mode opens a file for both reading and writing in binary format
+ - If the file exists, all previous content is deleted
+ - If the file does not exist, a new file is created
+ - Cursor starts at the beginning of the file (position 0)
+
+-> Syntax : f = open("image.png", "wb+")
+
+12. "ab+" — Append + Read Binary Mode
+ - This mode opens a file for reading and writing in binary format
+ - Writing always happens at the end of the file
+ - Existing content is preserved
+ - If the file does not exist, a new file is created
+ - To read from the beginning, cursor needs to be moved using f.seek(0)
+
+-> Syntax : f = open("image.png", "ab+")
